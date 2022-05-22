@@ -1,0 +1,117 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:models="clr-namespace:VisualFinal.Models"
+			 xmlns:dbm="clr-namespace:VisualFinal.Models.Database"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="VisualFinal.Views.FirstView">
+	<UserControl.Styles>
+		<Style Selector="ScrollViewer.sv1">
+			<Setter Property="VerticalScrollBarVisibility" Value="Disabled"/>
+			<Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+			<Setter Property="VerticalContentAlignment" Value="Stretch"/>
+			<Setter Property="Padding" Value="0,0,0,16"/>
+			<Setter Property="AllowAutoHide" Value="False"/>
+		</Style>
+		<Style Selector="ScrollViewer.sv2">
+			<Setter Property="VerticalScrollBarVisibility" Value="Disabled"/>
+			<Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Setter Property="VerticalContentAlignment" Value="Top"/>
+		</Style>
+		<Style Selector="DockPanel.dp1">
+			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+			<Setter Property="VerticalAlignment" Value="Stretch"/>
+		</Style>
+		<Style Selector="Button.b1">
+			<Setter Property="VerticalAlignment" Value="Stretch"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="Background" Value="White"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="BorderBrush" Value="Gray"/>
+		</Style>
+		<Style Selector="Button.b2">
+			<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+			<Setter Property="VerticalContentAlignment" Value="Stretch"/>
+			<Setter Property="Background" Value="LightGray"/>
+			<Setter Property="BorderThickness" Value="0"/>
+			<Setter Property="BorderBrush" Value="Gray"/>
+		</Style>
+		<Style Selector="Button.b3">
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+			<Setter Property="VerticalAlignment" Value="Stretch"/>
+			<Setter Property="Background" Value="LightGray"/>
+			<Setter Property="BorderThickness" Value="0"/>
+			<Setter Property="BorderBrush" Value="Gray"/>
+		</Style>
+		<Style Selector="TabControl.tc1">
+			<Setter Property="VerticalAlignment" Value="Stretch"/>
+			<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+			<Setter Property="VerticalContentAlignment" Value="Stretch"/>
+			<Setter Property="TabStripPlacement" Value="Left"/>
+		</Style>
+		<Style Selector="Border.br1">
+			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+			<Setter Property="VerticalAlignment" Value="Stretch"/>
+			<Setter Property="BorderThickness" Value="0"/>
+			<Setter Property="BorderBrush" Value="Gray"/>
+		</Style>
+	</UserControl.Styles>
+	<Grid RowDefinitions="2.2*,17.8*, 1.1*, 1.1*">
+		<DockPanel Grid.Row="0" Classes="dp1">
+			<Button Content="Change view"
+					Command="{Binding $parent[Window].DataContext.Change}"
+					Classes="b1"/>
+			<ScrollViewer Classes="sv1">
+				<TabControl Name="DataTabs" Items="{Binding MainContext.Tabs}"
+				 Classes="tc1">
+					<TabControl.ItemTemplate>
+						<DataTemplate>
+							<Border Classes="br1">
+								<Grid ColumnDefinitions="4*,*">
+									<TextBlock Grid.Column="0" Text="{Binding Header}"/>
+									<Button Grid.Column="1" Content="X"
+									 IsVisible="{Binding ButtonVisible}"
+									 Classes="b2"
+									 Command="{Binding $parent[TabControl].DataContext.ButtonDeleteTab}"
+									 CommandParameter="{Binding}"/>
+								</Grid>
+							</Border>
+						</DataTemplate>
+					</TabControl.ItemTemplate>
+					<TabControl.ContentTemplate>
+						<DataTemplate>
+							<TextBlock Text=""/>
+						</DataTemplate>
+					</TabControl.ContentTemplate>
+				</TabControl>
+			</ScrollViewer>
+		</DockPanel>
+		<ScrollViewer Grid.Row="1" Classes="sv2">
+			<!--
+			<ItemsControl Items="{Binding $parent[Window].DataContext.Data.Horses}">
+				<ItemsControl.DataTemplates>
+					<DataTemplate DataType="{x:Type dbm:Horses}">
+						<Grid ColumnDefinitions="*,*">
+							<TextBlock Grid.Column="0" Text="{Binding Id}"></TextBlock>
+							<TextBlock Grid.Column="1" Text="{Binding Id}"></TextBlock>
+						</Grid>
+					</DataTemplate>
+				</ItemsControl.DataTemplates>
+			</ItemsControl>
+			-->
+			<DataGrid Name="DataTable" Items="{Binding $parent[Window].DataContext.Data.Horses}"
+					  AutoGenerateColumns="True" CanUserSortColumns="True"/>
+		</ScrollViewer>
+		<Border Classes="br1" Grid.Row="2" BorderThickness="0,1,0,0">
+			<Button Classes="b3" Content="Create new" Name="CreateNew"/>
+		</Border>
+		<Border Classes="br1" Grid.Row="3" BorderThickness="0,1,0,0">
+			<Button Classes="b3" Content="Delete" Name="Delete"/>
+		</Border>
+	</Grid>
+
+</UserControl>

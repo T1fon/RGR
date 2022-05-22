@@ -1,0 +1,75 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="VisualFinal.Views.SecondView">
+	<UserControl.Styles>
+		<Style Selector="ScrollViewer.sv1">
+			<Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+			<Setter Property="HorizontalScrollBarVisibility" Value="Disabled"/>
+			<Setter Property="VerticalContentAlignment" Value="Stretch"/>
+		</Style>
+		<Style Selector="Button.b1">
+			<Setter Property="VerticalAlignment" Value="Stretch"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="Background" Value="LightGray"/>
+			<Setter Property="BorderThickness" Value="1,0,0,0"/>
+			<Setter Property="BorderBrush" Value="Gray"/>
+			<Setter Property="CornerRadius" Value="0"/>
+		</Style>
+		<Style Selector="Button.b2">
+			<Setter Property="VerticalAlignment" Value="Stretch"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="Background" Value="LightGray"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="BorderBrush" Value="Gray"/>
+		</Style>
+		<Style Selector="Border.br1">
+			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+			<Setter Property="VerticalAlignment" Value="Stretch"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="BorderBrush" Value="Gray"/>
+		</Style>
+	</UserControl.Styles>
+	<Grid ColumnDefinitions="*,2*">
+		<Grid Grid.Column="0" RowDefinitions="12*,*,*">
+			<ScrollViewer Grid.Row="0" Classes="sv1">
+				<ItemsControl Items="{Binding MainContext.Queries}">
+					<ItemsControl.ItemTemplate>
+						<DataTemplate>
+							<Border Classes="br1">
+								<Grid ColumnDefinitions="4*,*,*">
+									<TextBlock Grid.Column="0" Text="{Binding Name}"
+									 VerticalAlignment="Center"/>
+									<Button Grid.Column="1" Content="Show" Classes="b1"/>
+									<Button Grid.Column="2" Content="Delete" Classes="b1"/>
+								</Grid>
+							</Border>
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</ItemsControl>
+			</ScrollViewer>
+			<Button Grid.Row="1"
+			 Content="Create new"
+			 Classes="b2"/>
+			<Button Grid.Row="2"
+			 Content="Change view"
+			 Command="{Binding $parent[Window].DataContext.Change}"
+			 Classes="b2"/>
+		</Grid>
+		<Grid Grid.Column="1" RowDefinitions="10*,*,*,*,*">
+			<Border Classes="br1">
+				<TextBox Grid.Row="0" Watermark="Your query here" Focusable="False"/>
+			</Border>
+			<Button Grid.Row="1" Classes="b2" Name="SELECT" Content="SELECT"/>
+			<Button Grid.Row="2" Classes="b2" Name="JOIN" Content="JOIN"/>
+			<Button Grid.Row="3" Classes="b2" Name="GROUP" Content="GROUP"/>
+			<Button Grid.Row="4" Classes="b2" Name="Clear" Content="Clear"/>
+		</Grid>
+	</Grid>
+</UserControl>
