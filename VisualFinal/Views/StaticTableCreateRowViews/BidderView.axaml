@@ -40,7 +40,7 @@
 	<Grid RowDefinitions="*,*,0.4*,0.4*">
 		<TextBox Grid.Row="0" Text="{Binding Bidder.BidderName}" Watermark="BidderName"></TextBox>
 		<TextBox Grid.Row="1" Text="{Binding Bidder.Horses}" Watermark="Horses"></TextBox>
-    <TextBox Grid.Row="2" Text="{Binding Bidder.Succes}" Watermark="Succes"></TextBox>
+    <TextBox Grid.Row="2" Text="{Binding Bidder.Success}" Watermark="Success"></TextBox>
 		<Button Classes="b2" Grid.Row="3" Content="Confirm" Name="Confirm"></Button>
 		<Button Classes="b2" Grid.Row="4" Content="Cancel" Name="Cancel"></Button>
 	</Grid>

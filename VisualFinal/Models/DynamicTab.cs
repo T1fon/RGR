@@ -11,9 +11,8 @@ namespace VisualFinal.Models
         public DynamicTab(string h = "", List<object>? db = null, List<string>? dc = null) : base(h, dc)
         {
             ButtonVisible = true;
-            BindedList = db;
+            ObjectList = db;
         }
         public Query BindedQuery { get; set; }
-        public List<object>? BindedList { get; set; }
     }
 }

@@ -40,8 +40,8 @@
 	<Grid RowDefinitions="*,*,*,*,*,*,*,0.8*,0.8*">
 		<TextBox Grid.Row="0" Text="{Binding Horse.HorseName}" Watermark="HorseName"></TextBox>
 		<TextBox Grid.Row="1" Text="{Binding Horse.Sex}" Watermark="Sex"></TextBox>
-		<TextBox Grid.Row="2" Text="{Binding Horse.NumberOfWining}" Watermark="NumberOfWining"></TextBox>
-		<TextBox Grid.Row="3" Text="{Binding Horse.NumberOfLosing}" Watermark="NumberOfLosing"></TextBox>
+		<TextBox Grid.Row="2" Text="{Binding Horse.NumOfWining}" Watermark="NumberOfWining"></TextBox>
+		<TextBox Grid.Row="3" Text="{Binding Horse.NumOfLosing}" Watermark="NumberOfLosing"></TextBox>
 		<Button Classes="b2" Grid.Row="4" Content="Confirm" Name="Confirm"></Button>
 		<Button Classes="b2" Grid.Row="5" Content="Cancel" Name="Cancel"></Button>
 	</Grid>

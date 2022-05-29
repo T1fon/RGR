@@ -39,7 +39,7 @@
 	</Window.Styles>
 	<Grid RowDefinitions="*,*,*,0.5*,0.5*">
 		<TextBox Grid.Row="0" Text="{Binding Race.RaceNumber}" Watermark="RaceNumber"></TextBox>
-		<TextBox Grid.Row="1" Text="{Binding Race.TypeRace}" Watermark="TypeRace"></TextBox>
+		<TextBox Grid.Row="1" Text="{Binding Race.TipeRace}" Watermark="TipeRace"></TextBox>
     <TextBox Grid.Row="2" Text="{Binding Race.Date}" Watermark="Date"></TextBox>
     <TextBox Grid.Row="3" Text="{Binding Race.TimeRace}" Watermark="TimeRace"></TextBox>
 		<Button Classes="b2" Grid.Row="4" Content="Confirm" Name="Confirm"></Button>

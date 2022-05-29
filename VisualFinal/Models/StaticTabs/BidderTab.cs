@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +17,7 @@ namespace VisualFinal.Models.StaticTabs
             DataColumns.Add("BidderName");
             DataColumns.Add("Horses");
             DataColumns.Add("Success");
+            ObjectList = DBS.ToList<object>();
         }
 
         new public DbSet<Bidder>? DBS { get; set; }

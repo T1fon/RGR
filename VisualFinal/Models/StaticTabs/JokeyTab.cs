@@ -18,6 +18,7 @@ namespace VisualFinal.Models.StaticTabs
             DataColumns.Add("Name");
             DataColumns.Add("NumberOfWining");
             DataColumns.Add("NumberOfLosing");
+            ObjectList = DBS.ToList<object>();
         }
 
         new public DbSet<Jockey>? DBS { get; set; }

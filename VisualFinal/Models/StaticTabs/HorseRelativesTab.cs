@@ -17,6 +17,7 @@ namespace VisualFinal.Models.StaticTabs
             DataColumns.Add("HorseName");
             DataColumns.Add("Mum");
             DataColumns.Add("Dad");
+            ObjectList = DBS.ToList<object>();
         }
 
         new public DbSet<HorseRelative>? DBS { get; set; }

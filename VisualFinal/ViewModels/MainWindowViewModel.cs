@@ -79,10 +79,6 @@ namespace VisualFinal.ViewModels
         private void CreateQueries()
         {
             Queries = new ObservableCollection<Query>();
-            Queries.Add(new Query("1234"));
-            Queries.Add(new Query("12534"));
-            Queries.Add(new Query("123"));
-            Queries.Add(new Query("126734"));
         }
     }
 }

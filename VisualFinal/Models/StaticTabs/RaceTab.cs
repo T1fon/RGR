@@ -18,6 +18,7 @@ namespace VisualFinal.Models.StaticTabs
             DataColumns.Add("TipeRace");
             DataColumns.Add("Date");
             DataColumns.Add("TimeRace");
+            ObjectList = DBS.ToList<object>();
         }
 
         new public DbSet<Race>? DBS { get; set; }

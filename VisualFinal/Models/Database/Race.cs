@@ -12,9 +12,9 @@ namespace VisualFinal.Models.Database
         }
 
         public long RaceNumber { get; set; }
-        public byte[]? TipeRace { get; set; }
-        public byte[]? Date { get; set; }
-        public byte[]? TimeRace { get; set; }
+        public string? TipeRace { get; set; }
+        public string? Date { get; set; }
+        public string? TimeRace { get; set; }
 
         public virtual ICollection<Bid> Bids { get; set; }
         public virtual ICollection<Result> Results { get; set; }

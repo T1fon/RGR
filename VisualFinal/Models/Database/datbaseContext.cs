@@ -30,8 +30,8 @@ namespace VisualFinal.Models.Database
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlite(
-               "Data Source=" + Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName
-                + "\\Assets\\datbase.db");
+                               "Data Source=" + Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName
+                                + "\\Assets\\datbase.db");
             }
         }
 
@@ -80,8 +80,6 @@ namespace VisualFinal.Models.Database
                 entity.Property(e => e.BidderName)
                     .HasColumnType("VARCHAR (20)")
                     .HasColumnName("Bidder name");
-
-                entity.Property(e => e.Horses).HasColumnType("STRING");
 
                 entity.Property(e => e.Success).HasColumnType("DOUBLE");
             });
@@ -155,18 +153,13 @@ namespace VisualFinal.Models.Database
                     .ValueGeneratedNever()
                     .HasColumnName("Race number");
 
-                entity.Property(e => e.Date)
-                    .HasColumnType("DATETIME")
-                    .HasDefaultValueSql("\"DD.MM.YY\"");
+                entity.Property(e => e.Date).HasDefaultValueSql("\"DD.MM.YY\"");
 
                 entity.Property(e => e.TimeRace)
-                    .HasColumnType("TIME")
                     .HasColumnName("Time Race")
                     .HasDefaultValueSql("\"00:00:00\"");
 
-                entity.Property(e => e.TipeRace)
-                    .HasColumnType("STRING")
-                    .HasColumnName("Tipe race");
+                entity.Property(e => e.TipeRace).HasColumnName("Tipe race");
             });
 
             modelBuilder.Entity<Result>(entity =>
@@ -182,13 +175,10 @@ namespace VisualFinal.Models.Database
                 entity.Property(e => e.RaceNumber).HasColumnName("Race number");
 
                 entity.Property(e => e.AgeWeight)
-                    .HasColumnType("STRING")
                     .HasColumnName("Age/Weight")
                     .HasDefaultValueSql("\"0/0\"");
 
-                entity.Property(e => e.Backlog)
-                    .HasColumnType("TIME")
-                    .HasDefaultValueSql("\"00.00.00\"");
+                entity.Property(e => e.Backlog).HasDefaultValueSql("\"00.00.00\"");
 
                 entity.HasOne(d => d.HorseNameNavigation)
                     .WithMany(p => p.Results)

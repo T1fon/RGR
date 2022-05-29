@@ -35,7 +35,7 @@ namespace VisualFinal.Views
             {
                 if (selectedTab is DynamicTab)
                 {
-                    var selectedItems = (selectedTab as DynamicTab).BindedList;
+                    var selectedItems = (selectedTab as DynamicTab).ObjectList;
                     if (selectedItems != null)
                         this.Find<DataGrid>("DataTable").Items = selectedItems;
                 }
@@ -62,8 +62,8 @@ namespace VisualFinal.Views
                     else if (selectedTab is HorseTab)
                     {
                         var selectedItems = (selectedTab as HorseTab).DBS;
-                        /*if (selectedItems != null)
-                            this.Find<DataGrid>("DataTable").Items = selectedItems;*/
+                        if (selectedItems != null)
+                            this.Find<DataGrid>("DataTable").Items = selectedItems;
                     }
                     else if (selectedTab is ResultTab)
                     {

@@ -11,7 +11,7 @@ namespace VisualFinal.Models.Database
         }
 
         public string BidderName { get; set; } = null!;
-        public byte[]? Horses { get; set; }
+        public string? Horses { get; set; }
         public double Success { get; set; }
 
         public virtual ICollection<Bid> Bids { get; set; }

@@ -14,10 +14,11 @@ namespace VisualFinal.Models.StaticTabs
         {
             DBS = dBS;
             DataColumns = new List<string>();
-            DataColumns.Add("RaseNumber");
+            DataColumns.Add("RaceNumber");
             DataColumns.Add("HorseName");
             DataColumns.Add("BidderName");
             DataColumns.Add("Incom");
+            ObjectList = DBS.ToList<object>();
         }
 
         new public DbSet<Bid>? DBS { get; set; }

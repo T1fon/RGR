@@ -16,8 +16,9 @@ namespace VisualFinal.Models.StaticTabs
             DataColumns = new List<string>();
             DataColumns.Add("HorseName");
             DataColumns.Add("Sex");
-            DataColumns.Add("NumberOfWining");
-            DataColumns.Add("NumberOfLosing");
+            DataColumns.Add("NumOfWining");
+            DataColumns.Add("NumOfLosing");
+            ObjectList = DBS.ToList<object>();
         }
 
         new public DbSet<Horse>? DBS { get; set; }

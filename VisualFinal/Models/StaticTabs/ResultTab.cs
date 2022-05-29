@@ -18,6 +18,7 @@ namespace VisualFinal.Models.StaticTabs
             DataColumns.Add("RaceNumber");
             DataColumns.Add("Backlog");
             DataColumns.Add("Age/Weight");
+            ObjectList = DBS.ToList<object>();
         }
 
         new public DbSet<Result>? DBS { get; set; }

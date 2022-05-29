@@ -38,10 +38,10 @@
 		</Style>
 	</Window.Styles>
 	<Grid RowDefinitions="*,*,*,*,0.4*,0.4*">
-		<TextBox Grid.Row="0" Text="{Binding Jokey.HorseName}" Watermark="HorseName"></TextBox>
-		<TextBox Grid.Row="1" Text="{Binding Jokey.Name}" Watermark="Name"></TextBox>
-		<TextBox Grid.Row="2" Text="{Binding Jokey.NumberOfWining}" Watermark="NumberOfWining"></TextBox>
-		<TextBox Grid.Row="3" Text="{Binding Jokey.NumberOfLosing}" Watermark="NumberOfLosing"></TextBox>
+		<TextBox Grid.Row="0" Text="{Binding Jockey.HorseName}" Watermark="HorseName"></TextBox>
+		<TextBox Grid.Row="1" Text="{Binding Jockey.Name}" Watermark="Name"></TextBox>
+		<TextBox Grid.Row="2" Text="{Binding Jockey.NumberOfWining}" Watermark="NumberOfWining"></TextBox>
+		<TextBox Grid.Row="3" Text="{Binding Jockey.NumberOfLosing}" Watermark="NumberOfLosing"></TextBox>
 		<Button Classes="b2" Grid.Row="4" Content="Confirm" Name="Confirm"></Button>
 		<Button Classes="b2" Grid.Row="5" Content="Cancel" Name="Cancel"></Button>
 	</Grid>
